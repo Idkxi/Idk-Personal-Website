@@ -642,6 +642,130 @@ body {
     height: 220px;
   }
 }
+/* ===== PROJECTS SECTION ===== */
+.projects {
+  padding: 10rem 0 8rem;
+  background: linear-gradient(180deg, #12072f 0%, #050210 100%);
+  text-align: center;
+}
+
+.projects_title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: var(--accent-text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.projects_sub {
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+  color: rgba(255,255,255,0.7);
+  font-size: 1.6rem;
+}
+
+/* GRID */
+.projects_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+/* CARD */
+.project_card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 3rem;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.project_card:hover {
+  transform: translateY(-12px);
+}
+
+.project_card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+/* OVERLAY */
+.project_overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(5,2,16,0.95),
+    rgba(5,2,16,0.2)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2.5rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.project_card:hover .project_overlay {
+  opacity: 1;
+}
+
+.project_overlay h4 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: white;
+}
+
+.project_overlay p {
+  font-size: 1.4rem;
+  opacity: 0.75;
+  margin: 0.3rem 0 1.2rem;
+}
+
+.project_overlay a {
+  align-self: flex-start;
+  padding: 0.6rem 2rem;
+  border-radius: 999px;
+  background: var(--accent-bg-redD);
+  color: white;
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.project_overlay a:hover {
+  transform: scale(1.1);
+}
+.project_card {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project_overlay span {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 2rem;
+  border-radius: 999px;
+  background: var(--accent-bg-redD);
+  color: white;
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.project_card:hover .project_overlay span {
+  transform: scale(1.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .projects_grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* FOOTER BASE */
 .footer {
